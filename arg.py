@@ -4,7 +4,7 @@
 # 2016-12-04
 
 import os
-
+import glob
 
 class Arguments:
     """A simple arguments manager."""
@@ -20,5 +20,15 @@ class Arguments:
             path = self.argv[num]
             if os.path.exists(path) & os.path.isfile(path):
                 return path
+            else:
+                return None
+
+    def get_as_filelist(self, num):
+        if len(self.argv) <= num:
+            return None
+        else:
+            path = self.argv[num]
+            if os.path.exists(path) & os.path.isdir(path):
+                return glob.glob(path + "/*")
             else:
                 return None

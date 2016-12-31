@@ -3,6 +3,7 @@
 from arg import Arguments
 from rect import Rectangle
 from utils import resize
+import contour as C
 from contour import recognize_contour
 import cv2
 import sys
@@ -29,6 +30,7 @@ if __name__ == '__main__':
         sys.stderr.write(USAGE)
         exit(1)
 
+    print('File:\t', fullpath)
     img = cv2.imread(fullpath, cv2.IMREAD_COLOR)
     img = resize(img, 300)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -86,8 +88,9 @@ if __name__ == '__main__':
     print('Body/Face:\t', body_ratio)
 
     # Contour Section
-    contour = recognize_contour(img[face.y:face.y2, face.x:face.x2])
-    print('Contour:\t', contour)
+#    C.ready()
+#    contour = recognize_contour(img[face.y:face.y2, face.x:face.x2])
+#    print('Contour:\t', contour)
 
     # Show detect rectangles
     # Face border

@@ -13,3 +13,23 @@
 髪色     -> 0xRRGGBB
 肩タイプ -> N(撫で肩) or I(怒り肩)
 顔タイプ -> C(●型) or S(■型) or T(▲型) or U(▼型)
+
+
+## Mac Requirements
+
+```bash
+$ brew tap homebrew/science
+$ brew install openblas
+$ brew install hdf5
+$ pip install numpy
+$ brew install opencv3 --with-python3
+$ brew link opencv3 -force
+$ pip install chainer
+$ pip install h5py
+```
+
+## Usage
+
+```bash
+$ python3 predict.py foo.jpg
+```

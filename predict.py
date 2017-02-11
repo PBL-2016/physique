@@ -125,7 +125,9 @@ if __name__ == '__main__':
     # 0(triangle) and 2(circle)
     init_model()
     print("Cluster:\t", predict(skinR, skinG, skinB, hairR, hairG, hairB, \
-            body_ratio, 1))
+            body_ratio, 2))
+
+#    print("Cluster:\t", predict(skinR, skinG, skinB, 18, 5, 2, 2.7, 1))
 
     # Show detect rectangles
     # Face border
